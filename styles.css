@@ -1,0 +1,94 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: arial, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right,  rgba(250, 123, 32, 0.15),  rgba(250, 123, 32, 0.5));
+    color: white;
+}
+
+.calculator-grid {
+    width: 37.5rem;
+    min-height: 50rem;
+    margin: 3rem auto;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(5, 6.25rem);
+    grid-template-rows: 6rem minmax(7.5rem, auto) repeat(6, 6.25rem) 2rem;
+    background-color: rgba(250, 123, 32, 0.6);
+    border: 3px solid white;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px 3px rgba(112,112,112,0.9);
+}
+
+
+h1 {
+    height: 50px;
+    padding-top: 1rem;
+    grid-column: 1 / -1;
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    outline: none;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    border-radius: 50px;
+    box-shadow: 2px 2px 5px 3px rgba(112,112,112,0.9);
+    background-color: rgba(250, 123, 32, 0.65);
+    color: white;
+    margin: 10px;
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(250, 123, 32, 0.95);
+}
+
+.span-two-cols {
+    grid-column: span 2;
+    color: yellow;
+}
+
+.span-two-rows {
+    grid-row: span 2;
+}
+
+.output {
+    margin-bottom: 10px;
+    padding: 5px;
+    grid-column: 1 / -1;
+    background-color: rgba(252, 252, 252, 0.9);
+    color: black;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px 3px rgba(112,112,112,0.9);
+    border-radius: 5px;
+}
+
+
+button.hightlight  {
+    background-color: rgba(249, 208, 73, 0.75);
+    color: rgba(112, 112, 112, 0.75)
+}
+
+button.hightlight:hover {
+    background-color: rgba(249, 208, 73, 0.95);
+    color: rgba(112, 112, 112, 0.75)
+}
+
+.previous-operand {
+    color: rgba(112, 112, 112, 0.8);
+}
+
+.current-operand {
+    font-size: 2rem;
+}
