@@ -46,6 +46,7 @@ class Calculator {
     this.currentOperand = "";
   }
 
+  // "+" "-" "*" "/" RELATED SECTION
   getResult() {
     let result;
     const prev = parseFloat(this.previousOperand);
@@ -121,6 +122,8 @@ class Calculator {
     this.financialOperation = financialOperation;
   }
 
+
+  // FINANCIAL OPERATION SECTION
   updateFinancialDisplay() {
     switch (this.financialOperation) {
       case "CPT":
@@ -427,6 +430,7 @@ const calculator = new Calculator(
   currentOperandTextElement
 );
 
+// TO APPEND AND UPDATE DISPLAY WHEN NUMBERS ARE CLICKED
 numberButtons.forEach((item) => {
   item.addEventListener("click", () => {
     calculator.appendNumber(item.innerText);
@@ -434,6 +438,7 @@ numberButtons.forEach((item) => {
   });
 });
 
+// TO PERFORM OPERATION AND UPDATE DISPLAY WHEN OPERATION RELATED BUTTONS ("+", "-", "*", "/" ) ARE CLICKED
 operationButtons.forEach((item) => {
   item.addEventListener("click", () => {
     calculator.chooseOperation(item.innerText);
@@ -441,11 +446,13 @@ operationButtons.forEach((item) => {
   });
 });
 
+// TO GET RESULT WHEN "=" IS CLICKED
 equalsButton.addEventListener("click", () => {
   calculator.getResult();
   calculator.updateDisplay();
 });
 
+// TO CLEAR / DELETE DISPLAY WHEN "CLEAR" OR "DELETE" BUTTON IS CLICKED
 allClearButton.addEventListener("click", () => {
   calculator.clear();
   calculator.updateDisplay();
@@ -456,16 +463,19 @@ deleteButton.addEventListener("click", () => {
   calculator.updateDisplay();
 });
 
+// TO UPDATE SIGNAGE WHEN "+/-" IS CLICKED
 signageButton.addEventListener("click", () => {
   calculator.updateSignage();
   calculator.updateDisplay();
 });
 
+// TO CHANGE THE NUMBER TO % WHEN "%" IS CLICKED
 percentageButton.addEventListener("click", () => {
   calculator.updatePercentage();
   calculator.updateDisplay();
 });
 
+// TO PERFORM FINANCIAL RELATED OPERATION AND UPDATE DISPLAY WHEN FINANCIAL OPERATION RELATED BUTTONS ("CF", "N", "PMT", "PV", "FV", ETC) ARE CLICKED
 financialOperationButtons.forEach((item) => {
   item.addEventListener("click", () => {
     calculator.chooseFinancialOperation(item.innerText);
